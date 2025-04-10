@@ -9,21 +9,14 @@
 ini_set("display_errors", 1);
 header('Content-Type: text/html; charset=iso-8859-1');
 
-
-
-echo 'Versao Atual do PHP: ' . phpversion() . '<br>';
-
-$servername = "54.234.153.24";
-$username = "root";
-$password = "Senha123";
-$database = "meubanco";
-
-// Criar conexão
+$servername = "18.230.217.41";
+$username = "admin";
+$password = "adminsistema";
+$database = "radiantedb";
 
 
 $link = new mysqli($servername, $username, $password, $database);
 
-/* check connection */
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
@@ -31,10 +24,12 @@ if (mysqli_connect_errno()) {
 
 $valor_rand1 =  rand(1, 999);
 $valor_rand2 = strtoupper(substr(bin2hex(random_bytes(4)), 1));
+$tipo_sonho = array(acao, terror, comedia, drama, romance, ficcao, aventura);
 $host_name = gethostname();
+$valor_sonho =  rand(250, 2500);
 
 
-$query = "INSERT INTO dados (AlunoID, Nome, Sobrenome, Endereco, Cidade, Host) VALUES ('$valor_rand1' , '$valor_rand2', '$valor_rand2', '$valor_rand2', '$valor_rand2','$host_name')";
+$query = "INSERT INTO dados (IdUser, FirstName, Surname, Tema_Sonho, Valor_Desejado, Host) VALUES ('$valor_rand1' , '$valor_rand2', '$valor_rand2', '$valor_rand2', '$valor_sonho','$host_name')";
 
 
 if ($link->query($query) === TRUE) {
