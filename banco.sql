@@ -1,8 +1,8 @@
-CREATE TABLE dados (
-    AlunoID int,
+CREATE TABLE sonhos (
+    IdUsuario int,
     Nome varchar(50),
     Sobrenome varchar(50),
-    Endereco varchar(150),
-    Cidade varchar(50),
+    Tema_Sonho varchar(150),
+    Valor_Desejado float
     Host varchar(50)
 );
